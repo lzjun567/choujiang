@@ -18,7 +18,7 @@ class Award(BaseModel):
         award = cls.query.filter(cls.open_id.is_(None)).order_by(func.rand()).first()
         if award:
             award.open_id = open_id
-            db.commit()
+            db.session.commit()
         return award
 
     @classmethod
