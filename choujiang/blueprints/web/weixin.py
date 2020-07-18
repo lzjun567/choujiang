@@ -31,14 +31,16 @@ def weixin_signature():
             # 处理文本消息
             content = msg.content.strip()
             if "抽奖" in content:
-                # 1.  生成抽奖号码（一共可抽6次）
-                # 第6次要求转发文章
-                award = Award.get_number(openid)
+                # 总参与次数
                 count = Award.visit_count()
+                # 当前用户参与次数
                 visit = Award.visit_count(openid)
+                # 当前用户剩余参与次数
                 remain = 5-visit
                 remain = remain if remain > 0 else 0
                 if visit <= 6:
+                    # 获取抽奖号码
+                    award = Award.get_number(openid)
                     if award:
                         if visit == 5:
                             content = f"已为您生成抽奖号码：{award.number} \n\n" \
@@ -60,7 +62,7 @@ def weixin_signature():
                 if result:
                     content = "恭喜您获得图书一本，请微信联系 lzjun567，凭中奖号码和截图兑换奖品"
                 else:
-                    content = "有点小遗憾，您本次未中奖，再接再厉"
+                    content = "有点小遗憾哦，您本次未中奖，再接再厉"
         elif isinstance(msg, SubscribeEvent):
             content = "欢迎！回复'抽奖'可参与抽奖"
         else:
