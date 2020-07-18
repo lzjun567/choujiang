@@ -43,9 +43,10 @@ def weixin_signature():
                                       f"转发文章 http://www.ershicimi.com 还可以获取一次抽奖机会"
                         else:
                             content = f"已为您生成抽奖号码：{award.number} \n\n" \
+                                      f"回复 “t” 查询终奖结果\n\n"\
                                       f"中奖后可凭此号码和截图兑换奖品\n\n" \
                                       f"当前参与人次：{count}\n\n" \
-                                      f"回复 “t” 查询终奖结果\n\n"
+
                     else:
                         content = "当前参与人数爆棚，客官您来晚啦"
                 else:
