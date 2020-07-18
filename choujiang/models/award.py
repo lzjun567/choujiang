@@ -15,7 +15,7 @@ class Award(BaseModel):
         分配一个抽奖号码
         :param open_id:
         """
-        award = cls.query.filter(cls.open_id.isnot(None)).order_by(func.rand()).first()
+        award = cls.query.filter(cls.open_id.is_(None)).order_by(func.rand()).first()
         if award:
             award.open_id = open_id
             db.commit()
