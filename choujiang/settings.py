@@ -5,10 +5,12 @@ import os
 class BaseConfig(object):
     SECRET_KEY = os.getenv('SECRET_KEY', 'dev key')
     DEBUG_TB_INTERCEPT_REDIRECTS = False
+    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URI")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_RECORD_QUERIES = True
     WEIHUB_ARTICLE_PER_PAGE = 20
     WEIHUB_ACCOUNT_PER_PAGE = 15
+
 
     # 微信
     AppSecret = os.getenv("AppSecret", "")
