@@ -61,7 +61,7 @@ def weixin_signature():
             content = "欢迎！回复'抽奖'可参与抽奖"
         else:
             content = "success"
-        return TextReply(msg, content=content).render() if result != 'success' else result
+        return TextReply(msg, content=content).render()
 
 
 def sign_check():
