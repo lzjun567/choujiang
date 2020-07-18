@@ -36,28 +36,31 @@ def weixin_signature():
                 award = Award.get_number(openid)
                 count = Award.visit_count()
                 visit = Award.visit_count(openid)
+                remain = 5-visit
+                remain = remain if remain > 0 else 0
                 if visit <= 6:
                     if award:
                         if visit == 5:
                             content = f"已为您生成抽奖号码：{award.number} \n\n" \
-                                      f"转发文章 http://www.ershicimi.com 还可以获取一次抽奖机会"
+                                      f"转发文章 http://www.ershicimi.com 到朋友圈获取1次抽奖机会"
                         else:
                             content = f"已为您生成抽奖号码：{award.number} \n\n" \
                                       f"回复 “t” 查询终奖结果\n\n"\
+                                      f"还剩 {remain} 次抽奖机会\n\n"\
                                       f"中奖后可凭此号码和截图兑换奖品\n\n" \
                                       f"当前参与人次：{count}\n\n" \
 
                     else:
                         content = "当前参与人数爆棚，客官您来晚啦"
                 else:
-                    content = "抽奖机会全部用完啦"
+                    content = "您的抽奖机会已经全部用完啦，谢谢参与！"
 
             elif content in ("t", "T"):
                 result = Award.is_hit(openid)
                 if result:
                     content = "恭喜您获得图书一本，请微信联系 lzjun567，凭中奖号码和截图兑换奖品"
                 else:
-                    content = "有点小遗憾，您本次未中奖，下次再接再厉"
+                    content = "有点小遗憾，您本次未中奖，再接再厉"
         elif isinstance(msg, SubscribeEvent):
             content = "欢迎！回复'抽奖'可参与抽奖"
         else:
