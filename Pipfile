@@ -1,0 +1,45 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pylint = "*"
+
+[packages]
+click = "==7.0"
+flask-sqlalchemy = "==2.3.2"
+itsdangerous = "==1.1.0"
+jinja2 = "==2.10"
+sqlalchemy = "==1.2.14"
+gunicorn = "==19.9.0"
+python-dotenv = "*"
+mysqlclient = "*"
+fabric = "*"
+celery = "*"
+redis = "==3.2.1"
+flask-assets = "*"
+cssmin = "*"
+jsmin = "*"
+requests = "==2.21.0"
+beautifulsoup4 = "==4.7.1"
+sklearn = "*"
+goose3 = "*"
+jieba = "*"
+requests-html = "*"
+scipy = "*"
+oss2 = "*"
+payjs = "*"
+hashids = "*"
+qcloudsms-py = "*"
+Flask = "==1.0.2"
+MarkupSafe = "==1.1.0"
+Werkzeug = "==0.14.1"
+Flask-WTF = "*"
+Flask-Login = "*"
+Flask-Caching = "*"
+Cerberus = "*"
+flask-avatars = "*"
+
+[requires]
+python_version = "3.7"
