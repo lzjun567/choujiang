@@ -72,7 +72,7 @@ def sign_check():
     echostr = request.args.get("echostr", None)
     timestamp = request.args.get("timestamp", None)
     nonce = request.args.get("nonce", None)
-    sign = ["ershicimi1024", timestamp, nonce]
+    sign = ["supersoft", timestamp, nonce]
     sign.sort()
     sign = "".join(sign).encode("utf-8")
     sign = sha1(sign).hexdigest()
