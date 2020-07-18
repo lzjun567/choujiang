@@ -47,9 +47,9 @@ def weixin_signature():
                                       f"转发文章 http://www.ershicimi.com 到朋友圈获取1次抽奖机会"
                         else:
                             content = f"已为您生成抽奖号码：{award.number} \n\n" \
-                                      f"回复 “t” 查询终奖结果\n\n"\
+                                      f"回复 “t” 查询中奖结果\n\n"\
                                       f"还剩 {remain} 次抽奖机会\n\n"\
-                                      f"中奖后可凭此号码和截图兑换奖品\n\n" \
+                                      f"中奖后凭此号码和截图兑换奖品\n\n" \
                                       f"当前参与人次：{count}\n\n" \
 
                     else:
