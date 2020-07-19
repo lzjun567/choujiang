@@ -38,11 +38,11 @@ def weixin_signature():
                 # 当前用户剩余参与次数
                 remain = 5-visit
                 remain = remain if remain > 0 else 0
-                if visit <= 6:
+                if visit <= 5:
                     # 获取抽奖号码
                     award = Award.get_number(openid)
                     if award:
-                        if visit == 5:
+                        if visit == 4:
                             content = f"已为您生成抽奖号码：{award.number} \n\n" \
                                       f"转发文章 http://www.ershicimi.com 到朋友圈获取1次抽奖机会"
                         else:
