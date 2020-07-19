@@ -49,14 +49,14 @@ def weixin_signature():
                         else:
                             content = f"已为您生成抽奖号码：{award.number} \n\n" \
                                       f"回复 “t” 查询中奖结果\n\n"\
-                                      f"还剩 {remain} 次抽奖机会\n\n"\
+                                      f"还剩 {remain-1} 次抽奖机会\n\n"\
                                       f"中奖后凭此号码和截图兑换奖品\n\n" \
-                                      f"当前参与人次：{count}\n\n" \
+                                      f"当前已参与人次：{count}\n\n" \
 
                     else:
                         content = "当前参与人数爆棚，客官您来晚啦"
                 else:
-                    content = "您的抽奖机会已经全部用完啦，谢谢参与！"
+                    content = f"您的抽奖机会已经全部用完啦，谢谢参与！ 当前已参与人次：{count}"
 
             elif content in ("t", "T"):
                 result = Award.is_hit(openid)
