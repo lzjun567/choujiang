@@ -45,7 +45,7 @@ def weixin_signature():
                         if visit == 4:
                             content = f"已为您生成抽奖号码：{award.number} \n\n" \
                                       f"回复 “t” 查询中奖结果\n\n" \
-                                      f"转发文章 https://w.url.cn/s/Ak7hU6S 到朋友圈还可获取1次抽奖机会"
+                                      f"邀请微信好友参与还可额外获取1次抽奖机会"
                         else:
                             content = f"已为您生成抽奖号码：{award.number} \n\n" \
                                       f"回复 “t” 查询中奖结果\n\n"\
