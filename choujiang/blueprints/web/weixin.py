@@ -37,7 +37,7 @@ def weixin_signature():
                 visit = Award.visit_count(openid)
                 # 当前用户剩余参与次数
                 remain = 5-visit
-                remain = remain if remain > 0 else 0
+                remain = remain if remain >= 0 else 0
                 if visit <= 5:
                     # 获取抽奖号码
                     award = Award.get_number(openid)
@@ -49,7 +49,7 @@ def weixin_signature():
                         else:
                             content = f"已为您生成抽奖号码：{award.number} \n\n" \
                                       f"回复 “t” 查询中奖结果\n\n"\
-                                      f"还剩 {remain-1} 次抽奖机会\n\n"\
+                                      f"还剩 {remain} 次抽奖机会\n\n"\
                                       f"中奖后凭此号码和截图兑换奖品\n\n" \
                                       f"当前已参与人次：{count}\n\n" \
 
